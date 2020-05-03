@@ -1,4 +1,6 @@
-<meta content="" name="C-, C-minus, C minus, C, C- compiler, C- grammer">
+<meta name="keywords"    content="C-, C-minus, C minus, C, C- compiler, C- grammer, C- Eggen, C minus Eggen, C- University of North Florida, compilers University of North Florida, compilers, cop4620, C- cop4620, cop4620 C-, Alex Besuden, Alexander Besuden, Austin Laurin">
+<meta name="description" content="This documentation is about the C- language and how to understand it for making a compiler.">
+<meta name="author"      content="Alexander Besuden, Austin Laurin">
 
 # C- Grammer Rules
 
