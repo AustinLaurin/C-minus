@@ -2,7 +2,7 @@
 <meta name="description" content="This documentation is about the C- language and how to understand it for making a compiler.">
 <meta name="author"      content="Alexander Besuden, Austin Laurin">
 
-# C- Grammer Rules
+# C- Grammar Rules
 
 [![Language](https://img.shields.io/badge/Language-C---informational.svg)](https://github.com/abesuden/C-minus/contributors)
 [![Contributors](https://img.shields.io/badge/Contributors-2-informational.svg)](https://github.com/abesuden/C-minus/contributors)
@@ -16,7 +16,7 @@
 
 ![C- Logo](https://github.com/Abesuden/C-minus/blob/master/img/logo.png)
 
-As students of [Dr. Eggen's](unf.edu/~ree) compilers class, at the [University of North Florida](unf.edu), we decided to help create documentation for [Dr. Eggen's](unf.edu/~ree) C- language for all future students. The main motivation came from the fact that Google does not have every answer and when we tried to search for knowledge on the C- language, we could not find anything of use. Hopefully this helps all future students with understanding the C- language and have it help to build the compiler.
+As students of [Dr. Eggen's](unf.edu/~ree) Compilers class, at the [University of North Florida](unf.edu), we decided to help create documentation for [Dr. Eggen's](unf.edu/~ree) C- language for all future students. The main motivation came from the fact that Google does not have every answer and when we tried to search for knowledge on the C- language, we could not find anything of use. Hopefully this helps all future students with understanding the C- language and have it help to build the compiler.
 
 ## Table of Contents
 
@@ -55,23 +55,23 @@ As students of [Dr. Eggen's](unf.edu/~ree) compilers class, at the [University o
 
 ## Summary
 
-The C- language is a subset of the C language. That means anything you can do in C- can be done in C, but not everything in C can be done in C-. The twenty nine grammer rules for C- can be found [here](https://csunplugged.files.wordpress.com/2012/12/compiler-construction-principles-and-practice-k-c-louden-pws-1997-cmp-2002-592s.pdf) on page 492 (501). As with any grammer, the type of parser will have to be choosen, such as LR(1) or LALR(1), and once done the grammer will need to be left factored and/or left recursed in order to work with the choosen parser. However, this level of detail will not be coverd in this documentation. What will be coverd deals with what acceptable syntax and symantics look like.
+The C- language is a subset of the C language. That means anything you can do in C- can be done in C, but not everything in C can be done in C-. The twenty-nine grammer rules for C- can be found [here](https://csunplugged.files.wordpress.com/2012/12/compiler-construction-principles-and-practice-k-c-louden-pws-1997-cmp-2002-592s.pdf) on page 492 (501). As with any grammar, the type of parser will have to be choosen, such as LR(1) or LALR(1), and once done the grammar will may need to be modified in order to work with the choosen parser. However, this level of detail will not be coverd in this documentation. What will be coverd deals with what acceptable syntax and symantics look like.
 
 [^TOC](#Table-Of-Contents)
 
 ## Getting Started
 
-The C- language has the nice property that it is made up of only a small amount of rules as compared to the C language. This property makes C- easier to code a compiler and you will see that the implementation of its grammer will be straight forward. It is important to note that, when constructing a program in C-, the program needs to have a `main` function just like that found in the C language. Below is an example of a required `main` funciton setup:
+The C- language has the nice property of being made up of only a small amount of rules as compared to the C language. This property makes C- easier to code a compiler and you will see that the implementation of its grammar will be straight forward. It is important to note that, when constructing a program in C-, the program needs to have a `main` function just like that found in the C language. Below is an example of a required `main` funciton setup:
 
 ```
-void main(void) {
+int main(void) {
 
   return 0;
 }
 ```
-> you will see any further examples without the main function, however the `main` function is required for all programs to compile correctly in C-.
+> you will see many further examples without the main function, however the `main` function is required for all programs to compile correctly in C-.
 
-It is also important to note that, the `main` function must be the last function and every other function that is created must come before the `main` funciton. Also, the C- language does not care about white space.
+It is also important to note that, the `main` function must be the last function and every other function that is created must come before the `main` funciton. Also, the C- language does not care about whitespace.
 
 [^TOC](#Table-Of-Contents)
 
@@ -156,7 +156,7 @@ Once you understand the above examples, then you will need to understand how com
 
 ```
 a = 5 - 2 + 6 / 3;
-a = b = c * d = e - 4;
+a = b = c = d - 4;
 a = arrayOne[25]; // even though this array is of size 5, this is still accepted
 a = arrayOne[6/2];
 a = arrayOne[0] = arrayOne[3] = arrayOne[2-1] = arrayOne[4/1];
@@ -269,7 +269,7 @@ return array[3];
 ```
 return thisFun(y);
 ```
-> for type `int` functions can be recursively called or any previously defined funcitons
+> for type `int` functions can be recursively called or any previously defined functions
 
 ```
 return 4 - 3 / 4 * x + 1 - arrayOne[2] aboveFun(4, 5 - 2);
