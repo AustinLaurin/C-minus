@@ -51,10 +51,13 @@ As students of [Dr. Eggen's](unf.edu/~ree) compilers class, at the [University o
   * Be familiar with the C language
   * Currently taking or have taken a compilers class
 
+[^TOC](#Table-Of-Contents)
+
 ## Summary
 
 The C- language is a subset of the C language. That means anything you can do in C- can be done in C, but not everything in C can be done in C-. The twenty nine grammer rules for C- can be found [here](https://csunplugged.files.wordpress.com/2012/12/compiler-construction-principles-and-practice-k-c-louden-pws-1997-cmp-2002-592s.pdf) on page 492 (501). As with any grammer, the type of parser will have to be choosen, such as LR(1) or LALR(1), and once done the grammer will need to be left factored and/or left recursed in order to work with the choosen parser. However, this level of detail will not be coverd in this documentation. What will be coverd deals with what acceptable syntax and symantics look like.
 
+[^TOC](#Table-Of-Contents)
 
 ## Getting Started
 
@@ -69,6 +72,8 @@ void main(void) {
 > you will see any further examples without the main function, however the `main` function is required for all programs to compile correctly in C-.
 
 It is also important to note that, the `main` function must be the last function and every other function that is created must come before the `main` funciton. Also, the C- language does not care about white space.
+
+[^TOC](#Table-Of-Contents)
 
 ### *Variables Naming Convention*
 
@@ -91,9 +96,13 @@ Var_Three
 ```
 > Note: numbers and snake case are not allowed
 
+[^TOC](#Table-Of-Contents)
+
 ### *Run Time Error*
 
 The term `run time error` will come up quite a bit and it is important to understand what it means. Whenever there is a `run time error` the code is considered to be acceptable and that you will not need to catch and handle the errors. The errors will appear during run time and it is the C- developers job to know how to avoid such `run time error`. Basically, you are off the hook and do not need to worry about that specific facet of code.
+
+[^TOC](#Table-Of-Contents)
 
 ### *Initializing Variables*
 
@@ -112,6 +121,8 @@ int a = 42;
 int array = {0,1,2,3,4};
 int array[5] = {0,1,2,3,4};
 ```
+
+[^TOC](#Table-Of-Contents)
 
 ### *Assigning Variables*
 
@@ -152,9 +163,13 @@ a = arrayOne[0] = arrayOne[3] = arrayOne[2-1] = arrayOne[4/1];
 ```
 > Note: an array indexing outside its available size is acceptable because it is considered a [run time error](#Run-Time-Error)
 
+[^TOC](#Table-Of-Contents)
+
 ### *Functions*
 
 The C- language supports two types of functions, both type `int` and type `void`. Remember that, in the C laguage, the type specified in the function header, is the type the needs to be returned at the end of the function. 
+
+[^TOC](#Table-Of-Contents)
 
 #### *Headers*
 
@@ -193,6 +208,8 @@ int funOne (bool x) {
 ```
 > Note: the function return type `int` can be replaced with type `void` and it has the same effect
 
+[^TOC](#Table-Of-Contents)
+
 #### *Body*
 
 The body of any function maintains the same rules as found througout this documentation. However, keep in mind that scope does play a role here. So if a function has not been defined above, then the current function cannot reference it and there will be an error. For example, this is acceptable:
@@ -227,6 +244,8 @@ int funOne (int x) {
   return x + 2;
 }
 ```
+
+[^TOC](#Table-Of-Contents)
 
 #### *Return Statement*
 
@@ -271,14 +290,22 @@ int funOne (int x) {
 }
 ```
 
+[^TOC](#Table-Of-Contents)
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
 of conduct, and the process for commiting to this repository.
 
+[^TOC](#Table-Of-Contents)
+
 ## Versioning
 
+[^TOC](#Table-Of-Contents)
+
 We use [Git](https://git-scm.com/doc) for versioning. For the versions available, see the [tags on this repository](https://github.com/C-minus/tags).
+
+[^TOC](#Table-Of-Contents)
 
 ## Authors
 
@@ -287,11 +314,17 @@ We use [Git](https://git-scm.com/doc) for versioning. For the versions available
 
 See also the list of [contributors](https://github.com/abesuden/C-minus/contributors) who participated in this project.
 
+[^TOC](#Table-Of-Contents)
+
 ## License
 
 This project is licensed under the [MIT](LICENSE.md) Creative Commons License - see the [LICENSE.md](LICENSE.md) file for details
+
+[^TOC](#Table-Of-Contents)
 
 ## Acknowledgments
 
   * [@Austin Laurin](https://github.com/AustinLaurin) - for basically being a compiler himself.
   * [Alexander Besuden](http://AlexanderBesuden.com) - for making this documentation beautiful while still allowing for an easy to read and full understanding.
+  
+[^TOC](#Table-Of-Contents)
