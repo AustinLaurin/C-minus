@@ -9,7 +9,6 @@
 [![Maintenance](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/abesuden/C-minus/graphs/commit-activity)
 [![Progress](https://img.shields.io/badge/Progress-25%25-orange.svg)](https://github.com/abesuden/C-minus)
 [![Issues](https://img.shields.io/badge/Issues-2-1abc9c.svg)](https://github.com/abesuden/C-minus)
-[![Issues](https://img.shields.io/github/issues/Abesuden/C-minus/StrapDown.js.svg)](https://GitHub.com/abesuden/C-minus)
 
 [![OOP](https://img.shields.io/badge/OOP-no-informational.svg)](https://github.com/abesuden/C-minus/contributors)
 [![NamingConvention](https://img.shields.io/badge/NamingConvention-camelCase-informational.svg)](https://github.com/abesuden/C-minus/contributors)
@@ -327,5 +326,7 @@ This project is licensed under the [MIT](LICENSE.md) Creative Commons License - 
 
   * [@Austin Laurin](https://github.com/AustinLaurin) - for basically being a compiler himself.
   * [Alexander Besuden](http://AlexanderBesuden.com) - for making this documentation beautiful while still allowing for an easy to read and full understanding.
+  
+ [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/abesuden/C-minus)
   
 [^TOC](#Table-Of-Contents)
