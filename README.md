@@ -1,42 +1,269 @@
 # C- Grammer Rules
 
-[![Contributors](https://img.shields.io/badge/Contributors-2-brightgreen.svg)](https://github.com/abesuden/C-minus/contributors)
+[![Language](https://img.shields.io/badge/Language-C---informational.svg)](https://github.com/abesuden/C-minus/contributors)
+[![Contributors](https://img.shields.io/badge/Contributors-2-informational.svg)](https://github.com/abesuden/C-minus/contributors)
 [![Maintenance](https://img.shields.io/badge/Maintained-yes-brightgreen.svg)](https://github.com/abesuden/C-minus/graphs/commit-activity)
-[![Issues](https://img.shields.io/badge/Issues-0-1abc9c.svg)](https://github.com/abesuden/C-minus/issues)
-[![Progress](https://img.shields.io/badge/Progress-1%25-purple.svg)](https://github.com/abesuden/C-minus)
+[![Progress](https://img.shields.io/badge/Progress-25%25-orange.svg)](https://github.com/abesuden/C-minus)
 
+[![OOP](https://img.shields.io/badge/OOP-no-informational.svg)](https://github.com/abesuden/C-minus/contributors)
+[![NamingConvention](https://img.shields.io/badge/NamingConvention-camelCase-informational.svg)](https://github.com/abesuden/C-minus/contributors)
+[![CaresAboutWhiteSpace](https://img.shields.io/badge/CaresAboutWhiteSpace-no-informational.svg)](https://github.com/abesuden/C-minus/contributors)
 
 
 As students of [Dr. Eggen's](unf.edu/~ree) compilers class, at the [University of North Florida](unf.edu), we decided to help create documentation for [Dr. Eggen's](unf.edu/~ree) C- language for all future students. The main motivation came from the fact that Google does not have every answer and when we tried to search for knowledge on the C- language, we could not find anything of use. Hopefully this helps all future students with understanding the C- language and have it help to build the compiler.
 
 ## Table of Contents
 
-  - [Getting Started](#getting-started)
-  - [Runing the tests](#running-the-tests)
-  - [Deployment](#deployment)
+  - [Recommendations](#Recommendations)
+  - [Summary](#Summary)
+  - [Getting Started](#Getting-Started)
 
-<details>
-<summary><strong>-more-</strong></summary>
+    <details>
+    <summary><strong>-expand-</strong></summary>
 
-  - [Built With](#built-with)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
-  - [Authors](#authors)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+    - [Variables Naming Convention](#Variables-aming-Convention)
+    - [Run Time Error](#Run-Time-Error)
+    - [Initializing Variables](#Initializing-Variables)
+    - [Assigning Variables](#Assigning-Variables)
+    - [Functions](#Functions)
+      - [Headers](#Headers)
+      - [Body](#Body)
+      - [Return Statement](#Return-Statement)
+    - [](#)
+    
+    </details>
 
-</details>
+  - [Contributing](#Contributing)
+  - [Versioning](#Versioning)
+  - [Authors](#Authors)
+  - [License](#License)
+  - [Acknowledgments](#Acknowledgments)
+
+
+## Recommendations
+
+  * Be familiar with the C language
+  * Currently taking or have taken a compilers class
 
 ## Summary
 
+The C- language is a subset of the C language. That means anything you can do in C- can be done in C, but not everything in C can be done in C-. The twenty nine grammer rules for C- can be found [here](https://csunplugged.files.wordpress.com/2012/12/compiler-construction-principles-and-practice-k-c-louden-pws-1997-cmp-2002-592s.pdf) on page 492 (501). As with any grammer, the type of parser will have to be choosen, such as LR(1) or LALR(1), and once done the grammer will need to be left factored and/or left recursed in order to work with the choosen parser. However, this level of detail will not be coverd in this documentation. What will be coverd deals with what acceptable syntax and symantics look like.
+
+
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on how to deploy the project on a live system.
+The C- language has the nice property that it is made up of only a small amount of rules as compared to the C language. This property makes C- easier to code a compiler and you will see that the implementation of its grammer will be straight forward. It is important to note that, when constructing a program in C-, the program needs to have a `main` function just like that found in the C language. Below is an example of a required `main` funciton setup:
 
+```
+void main(void) {
 
+  return 0;
+}
+```
+> you will see any further examples without the main function, however the `main` function is required for all programs to compile correctly in C-.
 
+It is also important to note that, the `main` function must be the last function and every other function that is created must come before the `main` funciton. Also, the C- language does not care about white space.
+
+### *Variables Naming Convention*
+
+In the C- language, the naming convention is not like other programming languages. Variable names can only consist of letters, like those seen in the below example:
+
+```
+var
+varName
+varOne
+VarTwo
+```
+> Note: camel case is allowed
+
+Below are examples that are not acceptable:
+
+```
+var1
+var_two
+Var_Three
+```
+> Note: numbers and snake case are not allowed
+
+### *Run Time Error*
+
+The term `run time error` will come up quite a bit and it is important to understand what it means. Whenever there is a `run time error` the code is considered to be acceptable and that you will not need to catch and handle the errors. The errors will appear during run time and it is the C- developers job to know how to avoid such `run time error`. Basically, you are off the hook and do not need to worry about that specific facet of code.
+
+### *Initializing Variables*
+
+When initializing variables, the only variable type that will be used is `int`. You will still need to handle `void` types, however `void` types will not be initialized, rather `void` types will be generated by functions that are returning the type `void`. Below is an example of how a variable will be initialized:
+
+```
+int a;
+int arrayOne[5];
+```
+> arrays are included in the C- language
+
+Notice how a did not have a number assigned to it. This is because in the C- language, initializations and assignments ***CANNOT*** happen on the same line. Below is an example of code that will not pass the syntax analyzer because it will print `REJECT`:
+
+```
+int a = 42;
+int array = {0,1,2,3,4};
+int array[5] = {0,1,2,3,4};
+```
+
+### *Assigning Variables*
+
+Assigning variables is a little bit more complicated because arrays are part of the C- language. Assigning to a variable includes, not only values but also indexed arrays and function returns. Below are examples:
+
+```
+a = 42;
+a = arrayOne[3];
+a = mathFun(2, 4);
+arrayOne[2] = a;
+arrayTwo[1] = mathFun(2, 4);
+```
+
+Remember that any initialized variable is of type `int` and that it can only be assigned a type `int`. Thus, `a` and any arrays can only store the return value of the `mathFun(2,4)` if it is of type `int`. Below are examples that would not be accepted:
+
+```
+a = "Hello World!";
+a = "void";
+a = True;
+a = 'z';
+a = voidFun();
+arrayOne[0] = "Hello World!";
+arrayOne[0] = "void";
+arrayOne[0] = True;
+arrayOne[0] = 'z';
+arrayOne[0] = voidFun();
+```
+> Note: the `voidFun()` is a function that returns a void type
+
+Once you understand the above examples, then you will need to understand how complicated assigning can actually become. Below are examples of complicated variable assignments but they are still acceptable:
+
+```
+a = 5 - 2 + 6 / 3;
+a = b = c * d = e - 4;
+a = arrayOne[25]; // even though this array is of size 5, this is still accepted
+a = arrayOne[6/2];
+a = arrayOne[0] = arrayOne[3] = arrayOne[2-1] = arrayOne[4/1];
+```
+> Note: an array indexing outside its available size is acceptable because it is considered a [run time error](#Run-Time-Error)
+
+### *Functions*
+
+The C- language supports two types of functions, both type `int` and type `void`. Remember that, in the C laguage, the type specified in the function header, is the type the needs to be returned at the end of the function. 
+
+#### *Headers*
+
+Inside a functions header, there will be variable initialization but again these will only be of type `int`. Also remember that, like in the C language, the C- language requires the function return type to be defined. Below are examples of acceptable function headers:
+
+```
+int funOne () {
+```
+```
+int funOne (int x, int y) {
+```
+```
+void funTwo () {
+```
+```
+void funTwo (int x, int y) {
+```
+> Note: all function headers must have a `}` at some point and was not shown in the exmple
+
+Examples of not acceptable function headers can be found below:
+
+```
+int fun1 () {
+```
+```
+int funOne (void x) {
+```
+```
+int funOne (String x) {
+```
+```
+int funOne (char x) {
+```
+```
+int funOne (bool x) {
+```
+> Note: the function return type `int` can be replaced with type `void` and it has the same effect
+
+#### *Body*
+
+The body of any function maintains the same rules as found througout this documentation. However, keep in mind that scope does play a role here. So if a function has not been defined above, then the current function cannot reference it and there will be an error. For example, this is acceptable:
+
+```
+int funOne (int x) {
+  return x + 2;
+}
+
+void funTwo (int x) {
+  if (funOne(x) > 4) {
+    return funOne(x);
+  } else {
+    return x/2;
+  }
+}
+```
+> Note: `funOne` was defined before `funTwo` which is calling `funOne`. This is acceptable.
+
+The below example is not acceptable:
+
+```
+void funTwo (int x) {
+  if (funOne(x) > 4) {
+    return funOne(x);
+  } else {
+    return x/2;
+  }
+}
+
+int funOne (int x) {
+  return x + 2;
+}
+```
+
+#### *Return Statement*
+
+Return statements are tied to the type specified in the header, whether it was `int` or `void`. The below examples are the acceptable return statment for either types `void` or `int`.
+
+```
+return;
+```
+> for type `void`, a return statement is not needed but it can still have one
+
+```
+return a;
+```
+> for type `int` the returned variable needs to be of type `int`, which all are anyways
+
+```
+return array[3];
+```
+> for type `int` indexed arrays are acceptable
+
+```
+return thisFun(y);
+```
+> for type `int` functions can be recursively called or any previously defined funcitons
+
+```
+return 4 - 3 / 4 * x + 1 - arrayOne[2] aboveFun(4, 5 - 2);
+```
+> for type `int` complex math should be expected
+
+**Note**: the parser should handle seeing the `return` statements, however if the `return` is not in every possible code path, then it is considered a [run time error](#Run-Time-Error). As seen in the following example below:
+
+```
+int funOne (int x) {
+
+  if (x < 5) {
+    return 1;
+  } else {
+    x = 0;
+  }
+
+}
+```
 
 ## Contributing
 
