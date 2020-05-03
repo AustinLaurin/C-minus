@@ -1,3 +1,5 @@
+<meta content="" name="C-, C-minus, C minus, C, C- compiler, C- grammer">
+
 # C- Grammer Rules
 
 [![Language](https://img.shields.io/badge/Language-C---informational.svg)](https://github.com/abesuden/C-minus/contributors)
@@ -289,4 +291,4 @@ This project is licensed under the [MIT](LICENSE.md) Creative Commons License - 
 ## Acknowledgments
 
   * [@Austin Laurin](https://github.com/AustinLaurin) - for basically being a compiler himself.
-  * [@Alexander Besuden](https://github.com/abesuden) - for making this documentation beautiful while still allowing for an easy to read and full understanding.
+  * [Alexander Besuden](http://AlexanderBesuden.com) - for making this documentation beautiful while still allowing for an easy to read and full understanding.
