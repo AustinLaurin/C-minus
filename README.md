@@ -328,5 +328,4 @@ This project is licensed under the [MIT](LICENSE.md) Creative Commons License - 
   * [Alexander Besuden](http://AlexanderBesuden.com) - for making this documentation beautiful while still allowing for an easy to read and full understanding.
   
  [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/abesuden/C-minus)
-  
-[^TOC](#Table-Of-Contents)
+ 
