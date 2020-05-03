@@ -9,6 +9,7 @@
 [![NamingConvention](https://img.shields.io/badge/NamingConvention-camelCase-informational.svg)](https://github.com/abesuden/C-minus/contributors)
 [![CaresAboutWhiteSpace](https://img.shields.io/badge/CaresAboutWhiteSpace-no-informational.svg)](https://github.com/abesuden/C-minus/contributors)
 
+![C- Logo](https://github.com/Abesuden/C-minus/blob/master/img/logo.png)
 
 As students of [Dr. Eggen's](unf.edu/~ree) compilers class, at the [University of North Florida](unf.edu), we decided to help create documentation for [Dr. Eggen's](unf.edu/~ree) C- language for all future students. The main motivation came from the fact that Google does not have every answer and when we tried to search for knowledge on the C- language, we could not find anything of use. Hopefully this helps all future students with understanding the C- language and have it help to build the compiler.
 
